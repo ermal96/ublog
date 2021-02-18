@@ -11,29 +11,29 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
-<body class="container mt-5">
+<body class="container bg-light mt-5">
     <header>
-        <h1 class="text-black"><a href="/" class="text-decoration-none text-dark">UBLOG</a></h1>
+        <h1><a href="/" class="text-decoration-none fw-bolder text-danger">UBLOG</a></h1>
         <p class="fw-bold text-secondary">Laravel</p>
     </header>
     <main class="row mt-5">
-        <article class="col">
+        <article class="col-8">
             @yield('content')
         </article>
-        <aside class="col mt-4">
+        <aside class="col-4 ">
+            <h3 class="card-title">Create Post</h3>
 
-            <form method="POST" acction="{{ url('/') }}">
+            <form class="mt-4" method="POST" acction="{{ url('/') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" name="title" class="form-control" id="title">
+                    <input type="text" placeholder="Title" name="title" class="form-control" id="title">
                 </div>
                 <div class="mb-3">
-                    <label for="body" class="form-label">Body</label>
-                    <textarea class="form-control" name="body" id="body" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" placeholder="Body" name="body" id="body" cols="30"
+                        rows="10"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-danger">Create</button>
             </form>
         </aside>
     </main>
